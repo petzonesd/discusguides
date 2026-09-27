@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Amazon deep-water palette — river depth, discus red and turquoise */
+    --void: #0b1a24;
+    --water: #12283a;
+    --water-light: #1c3a52;
+    --pearl: #eef1ea;
+    --pearl-dim: #dfe6dc;
+    --ink: #14232c;
+    --ink-soft: #4c6069;
+    --turquoise: #2fa4a0;
+    --turquoise-deep: #1f7672;
+    --coral: #c8393f;
+    --coral-deep: #9c2a2f;
+    --border-soft: rgba(20, 35, 44, 0.14);
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Space Mono', 'Courier New', monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--pearl);
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a {
+    color: inherit;
+}
+
+/* Navigation */
+.navbar {
+    background: var(--void);
+    padding: 1.1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(238, 241, 234, 0.08);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--pearl);
+    letter-spacing: 0.01em;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--pearl-dim);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--coral);
+}
+
+/* Hero — full-bleed specimen photograph, editorial left-aligned label */
+.hero {
+    position: relative;
+    color: var(--pearl);
+    padding: 6rem 0 4.5rem;
+    background: linear-gradient(180deg, rgba(11, 26, 36, 0.55) 0%, rgba(11, 26, 36, 0.9) 100%),
+                url('https://upload.wikimedia.org/wikipedia/commons/c/ca/Desmond_%28a_Red_Turquoise_Discus%29.jpg') center 35% / cover no-repeat;
+    background-color: var(--void);
+    text-align: left;
+}
+
+.hero .container {
+    max-width: 720px;
+}
+
+.hero .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--turquoise);
+    display: block;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.02em;
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: 3.1rem;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-optical-sizing: auto;
+}
+
+.hero .tagline {
+    font-size: 1.15rem;
+    margin-bottom: 2.2rem;
+    color: var(--pearl-dim);
+    max-width: 34rem;
+}
+
+.hero .photo-credit {
+    position: absolute;
+    bottom: 0.9rem;
+    right: 1.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: rgba(238, 241, 234, 0.55);
+}
+
+.hero .photo-credit a {
+    color: rgba(238, 241, 234, 0.75);
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.8rem 1.6rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.15s;
+    display: inline-block;
+    border: 1.5px solid transparent;
+}
+
+.btn-primary {
+    background: var(--coral);
+    color: var(--pearl);
+}
+
+.btn-primary:hover {
+    background: var(--coral-deep);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--pearl);
+    border-color: rgba(238, 241, 234, 0.4);
+}
+
+.btn-secondary:hover {
+    border-color: var(--pearl);
+    background: rgba(238, 241, 234, 0.08);
+}
+
+/* Main Content */
+main {
+    padding: 4rem 0;
+}
+
+h2 {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    color: var(--ink);
+    margin-bottom: 1.3rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+    color: var(--ink);
+    font-weight: 600;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+.intro {
+    max-width: 62ch;
+}
+
+.intro p {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+}
+
+/* Pillars — specimen list, not identical cards */
+.pillars {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border-soft);
+}
+
+.pillar {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.pillar h3 a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--turquoise);
+}
+
+.pillar h3 a:hover {
+    color: var(--turquoise-deep);
+}
+
+.pillar p {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 52ch;
+}
+
+/* Variety Grid (species-style cards) */
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.species-card {
+    border-top: 3px solid var(--turquoise);
+    background: var(--pearl-dim);
+    transition: transform 0.15s;
+    padding: 1.4rem;
+}
+
+.species-card.has-photo {
+    border-top-color: var(--coral);
+}
+
+.species-card .thumb {
+    width: calc(100% + 2.8rem);
+    margin: -1.4rem -1.4rem 1.2rem;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.species-card .swatch {
+    width: calc(100% + 2.8rem);
+    margin: -1.4rem -1.4rem 1.2rem;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+}
+
+.species-card .swatch .sci-name {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.species-card .body {
+    padding: 0;
+}
+
+.species-card .sci-name-small {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--turquoise-deep);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.species-card h3 {
+    margin-bottom: 0.6rem;
+    font-size: 1.15rem;
+}
+
+.species-card h3 a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.species-card h3 a:hover {
+    color: var(--coral-deep);
+}
+
+.species-card p {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+}
+
+.species-card strong {
+    color: var(--coral-deep);
+}
+
+/* CTA Footer */
+.cta-footer {
+    background: var(--water);
+    color: var(--pearl);
+    padding: 2.5rem;
+}
+
+.cta-footer h2 {
+    color: var(--pearl);
+}
+
+.cta-footer p {
+    color: var(--pearl-dim);
+}
+
+.cta-footer a {
+    color: var(--coral);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cta-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background: var(--void);
+    color: var(--pearl-dim);
+    padding: 2.5rem 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer p {
+    font-size: 0.88rem;
+    opacity: 0.85;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--pearl-dim);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--coral);
+}
+
+/* Variety page color banner — used when no verified photograph is available */
+.species-hero {
+    margin: 0 calc(-50vw + 50%);
+    padding: 3.5rem 2rem;
+    color: var(--pearl);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 220px;
+}
+
+.species-hero .sci-name {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.3rem;
+}
+
+.species-hero h1 {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--pearl);
+    margin: 0;
+}
+
+/* Typography for Content Pages */
+.content {
+    max-width: 72ch;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.content h1 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.content .meta {
+    font-family: var(--font-mono);
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    margin-bottom: 2rem;
+}
+
+.content h2 {
+    margin-top: 2.4rem;
+    margin-bottom: 1rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--border-soft);
+}
+
+.content h3 {
+    margin-top: 1.6rem;
+}
+
+.content p {
+    margin-bottom: 1.1rem;
+    line-height: 1.8;
+}
+
+.content ul, .content ol {
+    margin-left: 1.6rem;
+    margin-bottom: 1.1rem;
+}
+
+.content li {
+    margin-bottom: 0.5rem;
+}
+
+.content strong {
+    color: var(--coral-deep);
+    font-weight: 600;
+}
+
+.content em {
+    font-style: italic;
+    color: var(--ink-soft);
+}
+
+.content figure {
+    margin: 2rem 0;
+}
+
+.content figure img {
+    width: 100%;
+    display: block;
+    border-top: 3px solid var(--turquoise);
+}
+
+.content figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    margin-top: 0.6rem;
+}
+
+.content figcaption a {
+    color: var(--turquoise-deep);
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.7rem 0;
+}
+
+.specs-table th {
+    background: var(--water);
+    color: var(--pearl);
+    padding: 0.8rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.specs-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border-soft);
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+}
+
+.specs-table tr:nth-child(odd) td {
+    background: var(--pearl-dim);
+}
+
+.callout {
+    background: var(--pearl-dim);
+    border-left: 3px solid var(--coral);
+    padding: 1.5rem 1.7rem;
+    margin: 1.7rem 0;
+}
+
+.callout strong {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+    }
+
+    .pillar {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
