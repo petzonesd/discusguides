@@ -7,23 +7,34 @@
 }
 
 :root {
-    /* Amazon deep-water palette — river depth, discus red and turquoise */
+    /* Amazon deep-water palette, recast as editorial paper-and-lacquer —
+       celadon paper ground, deep-water ink, discus turquoise + coral as accent */
     --void: #0b1a24;
     --water: #12283a;
     --water-light: #1c3a52;
-    --pearl: #eef1ea;
-    --pearl-dim: #dfe6dc;
+    --pearl: #edf1ea;
+    --pearl-dim: #e0e6da;
+    --paper: #f7f8f2;
     --ink: #14232c;
     --ink-soft: #4c6069;
+    --ink-faint: #7c8a88;
     --turquoise: #2fa4a0;
     --turquoise-deep: #1f7672;
     --coral: #c8393f;
     --coral-deep: #9c2a2f;
+    --rule: #d3d9c9;
+    --rule-strong: #14232c;
     --border-soft: rgba(20, 35, 44, 0.14);
 
     --font-display: 'Fraunces', Georgia, serif;
     --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'Space Mono', 'Courier New', monospace;
+
+    /* fluid editorial type scale */
+    --step-1: 1.05rem;
+    --step-2: clamp(1.5rem, 1.3rem + 0.9vw, 1.9rem);
+    --step-3: clamp(1.9rem, 1.5rem + 1.8vw, 2.5rem);
+    --step-4: clamp(2.4rem, 1.7rem + 3.2vw, 3.6rem);
 }
 
 html {
@@ -32,9 +43,10 @@ html {
 
 body {
     font-family: var(--font-body);
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--ink);
     background: var(--pearl);
+    font-feature-settings: "kern", "liga";
 }
 
 .container {
@@ -45,6 +57,16 @@ body {
 
 a {
     color: inherit;
+}
+
+/* Eyebrow / section-label — mono, uppercase, tracked out */
+.eyebrow,
+.section-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: block;
 }
 
 /* Navigation */
@@ -80,8 +102,9 @@ a {
 .nav-links a {
     color: var(--pearl-dim);
     text-decoration: none;
-    font-size: 0.92rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    letter-spacing: 0.03em;
     transition: color 0.2s;
 }
 
@@ -105,19 +128,16 @@ a {
 }
 
 .hero .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
     color: var(--turquoise);
-    display: block;
-    margin-bottom: 1.1rem;
-    letter-spacing: 0.02em;
+    margin-bottom: 1.2rem;
 }
 
 .hero h1 {
     font-family: var(--font-display);
-    font-size: 3.1rem;
-    line-height: 1.05;
-    margin-bottom: 1rem;
+    font-size: var(--step-4);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.1rem;
     font-weight: 600;
     font-optical-sizing: auto;
 }
@@ -153,10 +173,11 @@ a {
     padding: 0.8rem 1.6rem;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     transition: all 0.15s;
     display: inline-block;
     border: 1.5px solid transparent;
+    border-radius: 2px;
 }
 
 .btn-primary {
@@ -186,10 +207,11 @@ main {
 
 h2 {
     font-family: var(--font-display);
-    font-size: 1.9rem;
+    font-size: var(--step-3);
     color: var(--ink);
     margin-bottom: 1.3rem;
     font-weight: 600;
+    letter-spacing: -0.005em;
 }
 
 h3 {
@@ -201,7 +223,7 @@ h3 {
 }
 
 section {
-    margin-bottom: 4rem;
+    margin-bottom: 4.5rem;
 }
 
 .intro {
@@ -215,29 +237,43 @@ section {
     margin-bottom: 1rem;
 }
 
-/* Pillars — specimen list, not identical cards */
+/* Pillars — editorial doorway list, not identical cards */
 .pillars {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid var(--border-soft);
+    border-top: 2px solid var(--rule-strong);
 }
 
 .pillar {
     display: grid;
     grid-template-columns: 220px 1fr;
     gap: 2rem;
-    padding: 1.8rem 0;
-    border-bottom: 1px solid var(--border-soft);
+    padding: 1.9rem 0;
+    border-bottom: 1px solid var(--rule);
 }
 
 .pillar h3 a {
     color: var(--ink);
     text-decoration: none;
-    border-bottom: 2px solid var(--turquoise);
+    border-bottom: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pillar h3 a::after {
+    content: "\2192";
+    color: var(--turquoise);
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
 
 .pillar h3 a:hover {
     color: var(--turquoise-deep);
+}
+
+.pillar h3 a:hover::after {
+    transform: translateX(4px);
 }
 
 .pillar p {
@@ -246,18 +282,18 @@ section {
     max-width: 52ch;
 }
 
-/* Variety Grid (species-style cards) */
+/* Variety Grid — thin-rule doorways; photos still carry the visual weight */
 .species-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem 1.75rem;
 }
 
 .species-card {
-    border-top: 3px solid var(--turquoise);
-    background: var(--pearl-dim);
-    transition: transform 0.15s;
-    padding: 1.4rem;
+    border-top: 2px solid var(--rule-strong);
+    background: transparent;
+    transition: opacity 0.15s;
+    padding: 1.4rem 0 0;
 }
 
 .species-card.has-photo {
@@ -265,16 +301,16 @@ section {
 }
 
 .species-card .thumb {
-    width: calc(100% + 2.8rem);
-    margin: -1.4rem -1.4rem 1.2rem;
+    width: 100%;
+    margin: 0 0 1.2rem;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     display: block;
 }
 
 .species-card .swatch {
-    width: calc(100% + 2.8rem);
-    margin: -1.4rem -1.4rem 1.2rem;
+    width: 100%;
+    margin: 0 0 1.2rem;
     aspect-ratio: 4 / 3;
     display: flex;
     align-items: flex-end;
@@ -297,6 +333,7 @@ section {
     color: var(--turquoise-deep);
     display: block;
     margin-bottom: 0.4rem;
+    letter-spacing: 0.03em;
 }
 
 .species-card h3 {
@@ -307,10 +344,24 @@ section {
 .species-card h3 a {
     color: var(--ink);
     text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+}
+
+.species-card h3 a::after {
+    content: "\2192";
+    font-size: 0.9em;
+    color: var(--coral);
+    transition: transform 0.2s ease;
 }
 
 .species-card h3 a:hover {
     color: var(--coral-deep);
+}
+
+.species-card h3 a:hover::after {
+    transform: translateX(4px);
 }
 
 .species-card p {
@@ -326,7 +377,7 @@ section {
 .cta-footer {
     background: var(--water);
     color: var(--pearl);
-    padding: 2.5rem;
+    padding: 2.75rem;
 }
 
 .cta-footer h2 {
@@ -351,7 +402,8 @@ section {
 .footer {
     background: var(--void);
     color: var(--pearl-dim);
-    padding: 2.5rem 0;
+    padding: 2.75rem 0;
+    border-top: 1px solid rgba(238, 241, 234, 0.08);
 }
 
 .footer .container {
@@ -363,8 +415,10 @@ section {
 }
 
 .footer p {
-    font-size: 0.88rem;
-    opacity: 0.85;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    opacity: 0.75;
+    letter-spacing: 0.02em;
 }
 
 .footer-links {
@@ -377,7 +431,7 @@ section {
 .footer-links a {
     color: var(--pearl-dim);
     text-decoration: none;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     transition: color 0.2s;
 }
 
@@ -401,11 +455,12 @@ section {
     font-size: 0.9rem;
     opacity: 0.9;
     margin-bottom: 0.3rem;
+    letter-spacing: 0.03em;
 }
 
 .species-hero h1 {
     font-family: var(--font-display);
-    font-size: 2.4rem;
+    font-size: var(--step-3);
     color: var(--pearl);
     margin: 0;
 }
@@ -419,24 +474,29 @@ section {
 
 .content h1 {
     font-family: var(--font-display);
-    font-size: 2.2rem;
+    font-size: var(--step-4);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
     color: var(--ink);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
 .content .meta {
     font-family: var(--font-mono);
-    color: var(--ink-soft);
-    font-size: 0.82rem;
-    margin-bottom: 2rem;
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 2.2rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--rule);
 }
 
 .content h2 {
-    margin-top: 2.4rem;
+    margin-top: 2.6rem;
     margin-bottom: 1rem;
-    padding-top: 1.4rem;
-    border-top: 1px solid var(--border-soft);
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--rule-strong);
 }
 
 .content h3 {
@@ -468,20 +528,21 @@ section {
 }
 
 .content figure {
-    margin: 2rem 0;
+    margin: 2.2rem 0;
 }
 
 .content figure img {
     width: 100%;
     display: block;
-    border-top: 3px solid var(--turquoise);
+    border-top: 2px solid var(--turquoise);
 }
 
 .content figcaption {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: var(--ink-soft);
+    color: var(--ink-faint);
     margin-top: 0.6rem;
+    letter-spacing: 0.01em;
 }
 
 .content figcaption a {
@@ -491,34 +552,38 @@ section {
 .specs-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.7rem 0;
+    margin: 1.8rem 0;
+    border-top: 2px solid var(--rule-strong);
 }
 
 .specs-table th {
-    background: var(--water);
-    color: var(--pearl);
-    padding: 0.8rem 1rem;
+    background: none;
+    color: var(--ink-faint);
+    padding: 0.85rem 1rem 0.6rem 0;
     text-align: left;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .specs-table td {
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid var(--border-soft);
+    padding: 0.8rem 1rem 0.8rem 0;
+    border-bottom: 1px solid var(--rule);
     font-family: var(--font-mono);
     font-size: 0.88rem;
 }
 
 .specs-table tr:nth-child(odd) td {
-    background: var(--pearl-dim);
+    background: none;
 }
 
 .callout {
-    background: var(--pearl-dim);
+    background: var(--paper);
     border-left: 3px solid var(--coral);
     padding: 1.5rem 1.7rem;
-    margin: 1.7rem 0;
+    margin: 1.8rem 0;
 }
 
 .callout strong {
@@ -526,6 +591,7 @@ section {
     margin-bottom: 0.6rem;
     font-family: var(--font-display);
     font-size: 1.05rem;
+    color: var(--ink);
 }
 
 /* Responsive */
@@ -539,10 +605,6 @@ section {
         padding: 4rem 0 3rem;
     }
 
-    .hero h1 {
-        font-size: 2.1rem;
-    }
-
     .hero .tagline {
         font-size: 1rem;
     }
@@ -550,10 +612,6 @@ section {
     .pillar {
         grid-template-columns: 1fr;
         gap: 0.5rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
     }
 
     .footer .container {
