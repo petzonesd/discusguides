@@ -182,11 +182,13 @@
     </url>
     <url>
         <loc>https://www.discusguides.com/community/</loc>
+    <lastmod>2026-09-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.discusguides.com/sourcing/</loc>
+    <lastmod>2026-09-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
