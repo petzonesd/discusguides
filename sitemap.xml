@@ -8,7 +8,7 @@
     </url>
     <url>
         <loc>https://www.discusguides.com/varieties/</loc>
-        <lastmod>2026-10-05</lastmod>
+        <lastmod>2026-10-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -103,6 +103,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://www.discusguides.com/varieties/stendker-discus.html</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://www.discusguides.com/varieties/blue-snakeskin.html</loc>
         <lastmod>2026-10-05</lastmod>
         <changefreq>monthly</changefreq>
@@ -140,7 +146,7 @@
     </url>
     <url>
         <loc>https://www.discusguides.com/care/water-parameters.html</loc>
-        <lastmod>2026-10-05</lastmod>
+        <lastmod>2026-10-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -182,7 +188,7 @@
     </url>
     <url>
         <loc>https://www.discusguides.com/community/</loc>
-        <lastmod>2026-10-07</lastmod>
+        <lastmod>2026-10-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
