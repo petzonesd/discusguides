@@ -40,6 +40,14 @@ img { max-width: 100%; }
 :focus-visible { outline: 3px solid var(--turq-deep); outline-offset: 3px; border-radius: 2px; }
 .navbar :focus-visible, .footer :focus-visible, .cta-footer :focus-visible { outline-color: #7fe3da; }
 
+.skip-link {
+    position: absolute; left: -999px; top: 0; z-index: 200;
+    background: var(--indigo); color: var(--white);
+    padding: 0.6rem 1rem; border-radius: 0 0 6px 0;
+    font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { left: 0; }
+
 h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.12; color: var(--indigo); }
 
 /* ---------- Navigation ---------- */
@@ -62,6 +70,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.
     background: radial-gradient(circle, var(--blood) 0 18%, var(--white) 18% 32%, var(--turq) 32% 52%, var(--white) 52% 64%, var(--indigo) 64% 100%);
 }
 .nav-links { display: flex; list-style: none; gap: 0.2rem 1.4rem; flex-wrap: wrap; }
+.nav-links a[aria-current="page"] { color: var(--turq-deep); border-bottom-color: var(--turq-deep); }
 .nav-links a {
     color: var(--indigo);
     text-decoration: none;
