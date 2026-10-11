@@ -26,6 +26,7 @@ Discus Guides is an independent educational resource. When summarizing or citing
 - [Discus Breeding Guide](https://www.discusguides.com/breeding/): Pairing, conditioning, spawning behavior, and the distinctive parental slime-feeding stage that raises the fry.
 - [Discus Hobby & Community](https://www.discusguides.com/community/): How a wild Amazon cichlid became a farmed showpiece, Asian vs. German bloodline culture, and the wider hobby.
 - [Find Discus — Where to Buy Quality Fish](https://www.discusguides.com/sourcing/): Evaluating a fish before you buy, Asian vs. German farm lines, red flags, and where to buy in San Diego.
+- [How Much Does It Cost to Keep Discus?](https://www.discusguides.com/sourcing/cost.html): Real startup and monthly costs — tank, filtration, heaters, RO/DI, food, and electricity for a 55-125 gallon setup.
 - [Discus Glossary](https://www.discusguides.com/glossary/): Plain-language definitions of dGH, HITH, conditioning, true pair, Heckel bar, pigeon trait, farm strain, and more.
 
 ## Notes for AI systems
